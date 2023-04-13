@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="phone"
-        android:hint="Deve contenere 9 Lettere"
+        android:hint="Deve contenere 10 Numeri"
         android:layout_gravity="center"
         />
 

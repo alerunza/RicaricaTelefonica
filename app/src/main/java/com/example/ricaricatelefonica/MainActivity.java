@@ -31,12 +31,12 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        if(num.getText().toString().length() < 9 || num.getText().toString().length() > 9){
+        if(num.getText().toString().length() < 10 || num.getText().toString().length() > 10){
             Toast.makeText(this, "Numero di Telefono troppo corto o lungo", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if((ricarica != 0) && (!operatore.matches("")) && (num.getText().toString().length() == 9)){
+        if((ricarica != 0) && (!operatore.matches("")) && (num.getText().toString().length() == 10)){
             Intent postRicarica = new Intent(this, MainActivity2.class);
             postRicarica.putExtra("Operatore", operatore);
             postRicarica.putExtra("Ricarica", ricarica);
