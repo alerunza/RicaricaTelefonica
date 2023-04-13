@@ -25,19 +25,24 @@ public class MainActivity extends AppCompatActivity {
     public void ricaricaTel(View v){
         EditText num = (EditText) findViewById(R.id.editTextPhone);
 
+        Log.e("MainActivity", num.getText().toString());
         if(num.getText().toString().matches("")){
             Toast.makeText(this, "Immetti il tuo Numero di Telefono", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if((ricarica != 0) && (!operatore.matches(""))){
+        if(num.getText().toString().length() < 9 || num.getText().toString().length() > 9){
+            Toast.makeText(this, "Numero di Telefono troppo corto o lungo", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if((ricarica != 0) && (!operatore.matches("")) && (num.getText().toString().length() == 9)){
             Intent postRicarica = new Intent(this, MainActivity2.class);
             postRicarica.putExtra("Operatore", operatore);
             postRicarica.putExtra("Ricarica", ricarica);
             postRicarica.putExtra("Telefono", num.getText().toString());
             startActivity(postRicarica);
         }
-
     }
 
     public void checkOperatore(View v){
@@ -46,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         switch (v.getId()){
             case R.id.rB1:
                 if(checked){
-                    operatore = "Wind";
+                    operatore = "Wind3";
                     Log.e("MainActivity", operatore);
                 }
                 break;
@@ -74,17 +79,17 @@ public class MainActivity extends AppCompatActivity {
         switch (v.getId()){
             case R.id.rBr1:
                 if(checked){
-                    ricarica = 5;
+                    ricarica += 5;
                 }
                 break;
             case R.id.rBr2:
                 if(checked){
-                    ricarica = 10;
+                    ricarica += 10;
                 }
                 break;
             case R.id.rBr3:
                 if(checked){
-                    ricarica = 20;
+                    ricarica += 20;
                 }
                 break;
         }
