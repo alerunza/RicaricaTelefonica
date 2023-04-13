@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scegli l'operatore"
+        android:layout_gravity="center"
+        android:textSize="28dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_margin="5dp"
+        />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
+
+        <RadioButton
+            android:id="@+id/rB1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wind3"
+            android:onClick="checkOperatore"/>
+
+        <RadioButton
+            android:id="@+id/rB2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TIM"
+            android:onClick="checkOperatore"/>
+
+        <RadioButton
+            android:id="@+id/rB3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vodafone"
+            android:onClick="checkOperatore"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txt_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inserisci il tuo Numero"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_margin="5dp"
+        />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        android:layout_gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/txt_somma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scegli la Somma"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_margin="5dp"
+        />
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
+
+        <RadioButton
+            android:id="@+id/rBr1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5€"
+            android:onClick="checkRicarica"/>
+
+        <RadioButton
+            android:id="@+id/rBr2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10€"
+            android:onClick="checkRicarica"/>
+
+        <RadioButton
+            android:id="@+id/rBr3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20€"
+            android:onClick="checkRicarica"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ricarica"
+        android:layout_gravity="center"
+        android:onClick="ricaricaTel"
+        />
+
+</LinearLayout>
